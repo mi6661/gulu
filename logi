@@ -1,0 +1,53 @@
+[33mcommit 45a87e937984cf58bf675386cc63cac3bb20d603[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: gulu <gulu24257@gmail.com>
+Date:   Fri Sep 13 15:39:10 2024 +0800
+
+    完成了第一种方式的beean的配置
+
+[33mcommit 9058b95d9c51a701602141ad6cd83f89d4748de1[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: gulu <gulu24257@gmail.com>
+Date:   Fri Sep 13 15:01:31 2024 +0800
+
+    修改了文件结构
+
+[33mcommit ce62347cc4edf7a0af955115864b65724ce52318[m
+Author: gulu <gulu24257@gmail.com>
+Date:   Thu Sep 12 00:17:25 2024 +0800
+
+    add new file
+
+[33mcommit 48991fdbe34ba69af0ddabacbfcca83393fc9ba4[m
+Author: gulu <gulu24257@gmail.com>
+Date:   Wed Sep 11 23:51:21 2024 +0800
+
+    新增文件
+
+[33mcommit 38320f0a9b0a957f6dceefe51e2077dd8ad9916f[m
+Author: MI <#481447414@qq.com>
+Date:   Wed Sep 11 22:27:29 2024 +0800
+
+    添加requirement.txt文件
+
+[33mcommit 67b4358b1833391ce7c4062d91b7e2331da07303[m
+Author: MI <#481447414@qq.com>
+Date:   Wed Sep 11 22:24:46 2024 +0800
+
+    调整了文件的结构
+
+[33mcommit 1ff203ed06cee179d4ee069b3565d3deebfdc08a[m
+Author: MI <#481447414@qq.com>
+Date:   Wed Sep 11 22:22:22 2024 +0800
+
+    创建了一个springboot模板
+
+[33mcommit 269e30ebb8f49c67dcc63fb6c087afa4344da452[m
+Author: MI <#481447414@qq.com>
+Date:   Wed Sep 11 22:18:24 2024 +0800
+
+    一个测试文件
+
+[33mcommit 3f895bfba2bc309d8c137aad1b312e01ea6107eb[m
+Author: 咕噜 <79243625+mi6661@users.noreply.github.com>
+Date:   Wed Sep 11 20:23:54 2024 +0800
+
+    Initial commit
