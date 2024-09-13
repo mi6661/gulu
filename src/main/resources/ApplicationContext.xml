@@ -14,4 +14,5 @@
 
     <!--base-package的赋值是需要扫描的的文件已经子类文件夹-->
     <context:component-scan base-package="Bean"/>
+    <context:property-placeholder location="application.properties"/>
 </beans>
