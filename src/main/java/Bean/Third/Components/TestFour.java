@@ -1,13 +1,15 @@
 package Bean.Third.Components;
 
-public class TestOne {
+import org.springframework.context.annotation.Bean;
+
+
+public class TestFour {
     String name = null;
     int age = 0;
-    public TestOne(String name) {
+    public TestFour(String name) {
         this.name = name;
-        System.out.println("TestOne constructor");
     }
-    public TestOne(){
+    public TestFour(){
         this.name = "TestOne";
     }
 

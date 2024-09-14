@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ComponentScan;
 import Bean.Third.Components.*;
 @Configuration    //Configuration用于标记配置类
-@ComponentScan("Bean.Third.Components")//在配置类中配置需要自动扫描的包
+//@ComponentScan("Bean.Third.Components")//在配置类中配置需要自动扫描的包
 public class OneConfiguration {
 
     //在配置类中配置Bean
