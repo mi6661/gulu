@@ -6,6 +6,7 @@ import Bean.Second.Second;
 import Bean.Third.Components.TestOne;
 import Bean.Third.OneConfiguration;
 import Bean.Lifecycle.Config;
+import Bean.Lifecycle.UseXml.Person;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -54,6 +55,11 @@ public class DemoApplication {
 		lifetest.Hello();
 		lifeCycle.close();//bean的销毁
 
+			//这里是Bean的生命周期中用xml配置的方法
+		ConfigurableApplicationContext bean_lifeCycle_xml = new ClassPathXmlApplicationContext("Bean_Life_Cycle.xml");
+		Person person = (Person)bean_lifeCycle_xml.getBean("xml_bean_cycle");
+		person.setID(9331);
+		person.Print();
 
 	}
 

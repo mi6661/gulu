@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--这个xml文件是用与Bean的周期中回调用的
+    使用方法就在下面的bean中这样。定义init-method和destroy指向类中需要的方法即可
+    Just So So!!!
+    -->
+    <bean id="xml_bean_cycle" class="Bean.Lifecycle.UseXml.Person" init-method="init" destroy-method="destroy">
+        <constructor-arg value="zhangsan" />
+        <constructor-arg value="19"/>
+    </bean>
+</beans>
