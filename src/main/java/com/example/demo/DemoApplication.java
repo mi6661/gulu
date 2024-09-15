@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import Bean.Aware.*;
 import Bean.First.First;
 import Bean.Lifecycle.test_Component;
 import Bean.Second.Second;
@@ -7,14 +8,11 @@ import Bean.Third.Components.TestOne;
 import Bean.Third.OneConfiguration;
 import Bean.Lifecycle.Config;
 import Bean.Lifecycle.UseXml.Person;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
@@ -61,6 +59,25 @@ public class DemoApplication {
 		person.setID(9331);
 		person.Print();
 
+
+
+		//这里学习的是Aware接口的部分
+			/*这里的是用BeanFactory获取Bean*/
+		ApplicationContext AwareContext = new AnnotationConfigApplicationContext(AwareConfig.class);
+		MyBeanFactoryAwareBean myBean = (MyBeanFactoryAwareBean)AwareContext.getBean(MyBeanFactoryAwareBean.class);
+		SimpleBean simpleBean = (SimpleBean)myBean.getBean("simpleBean");
+		simpleBean.SayHello();
+		((AnnotationConfigApplicationContext)AwareContext).close();
+			/*输出某个特定的属性值*/
+		ApplicationContext Aware_Evironment_Context = new AnnotationConfigApplicationContext(AwareConfig.class);
+		MyBeanEnvironmentAware envirAware = (MyBeanEnvironmentAware) Aware_Evironment_Context.getBean(MyBeanEnvironmentAware.class);
+		envirAware.printProperty("java.version ");
+		((AnnotationConfigApplicationContext)AwareContext).close();
+			/*获取ApplicationContext*/
+		ApplicationContext Aware_Bean_Context = new AnnotationConfigApplicationContext(AwareConfig.class);
+		MyBeanContextAwareBean context_aware = (MyBeanContextAwareBean) Aware_Bean_Context.getBean(MyBeanContextAwareBean.class);
+		SimpleBean simpleBean1 = (SimpleBean)context_aware.getApplictionContext().getBean("simpleBean");
+		simpleBean1.SayHello();
 	}
 
 }
