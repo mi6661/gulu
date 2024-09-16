@@ -8,13 +8,14 @@ import Bean.Third.Components.TestOne;
 import Bean.Third.OneConfiguration;
 import Bean.Lifecycle.Config;
 import Bean.Lifecycle.UseXml.Person;
+import Bean.Event.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
+import java.lang.Thread.*;
 @SpringBootApplication
 public class DemoApplication {
 
@@ -78,6 +79,17 @@ public class DemoApplication {
 		MyBeanContextAwareBean context_aware = (MyBeanContextAwareBean) Aware_Bean_Context.getBean(MyBeanContextAwareBean.class);
 		SimpleBean simpleBean1 = (SimpleBean)context_aware.getApplictionContext().getBean("simpleBean");
 		simpleBean1.SayHello();
+
+
+		//监听事件
+
+		ApplicationContext EventListenerContext = new AnnotationConfigApplicationContext(EventConfig.class);
+		try{
+			Thread.sleep(10000);
+		}catch(InterruptedException e){
+			e.printStackTrace();
+		}
+		((AnnotationConfigApplicationContext)EventListenerContext).close();
 	}
 
 }
