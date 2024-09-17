@@ -13,5 +13,7 @@
             @EventListener。定义方法public void onEvent(E e);
         (3)监听事件的优先级：
             使用注解@Order(n),n=1,2,3,4;数字越小等级越高，越先执行
-
+## 2024年9月17日
+    1.学习了spring的生产事件的类
+        
 
