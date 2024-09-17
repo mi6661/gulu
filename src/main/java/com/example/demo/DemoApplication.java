@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import Bean.Aware.*;
+import Bean.Event.EventPublisher.CustomEvent;
 import Bean.First.First;
 import Bean.Lifecycle.test_Component;
 import Bean.Second.Second;
@@ -9,6 +10,7 @@ import Bean.Third.OneConfiguration;
 import Bean.Lifecycle.Config;
 import Bean.Lifecycle.UseXml.Person;
 import Bean.Event.*;
+import Bean.Event.EventPublisher.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -84,12 +86,13 @@ public class DemoApplication {
 		//监听事件
 
 		ApplicationContext EventListenerContext = new AnnotationConfigApplicationContext(EventConfig.class);
-		try{
-			Thread.sleep(10000);
-		}catch(InterruptedException e){
-			e.printStackTrace();
-		}
+
+		EventListenerContext.getBean("customEventPublisher", CustomEventPublisher.class).fire();
+
+
 		((AnnotationConfigApplicationContext)EventListenerContext).close();
+
+
 	}
 
 }
