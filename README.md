@@ -1,4 +1,4 @@
-# 学习springʕ ᵔᴥᵔ ʔ
+# 学习spring-Iocʕ ᵔᴥᵔ ʔ
 
 ## 2024年9月15日
     1、学习了Spring的Bean的Aware接口的应用。在代码中实现了BeanFactoryAware、
