@@ -4,6 +4,7 @@ import Bean.Aware.*;
 import Bean.Event.EventPublisher.CustomEvent;
 import Bean.First.First;
 import Bean.Lifecycle.test_Component;
+import Bean.Processor.ProcessorConfig;
 import Bean.Second.Second;
 import Bean.Third.Components.TestOne;
 import Bean.Third.OneConfiguration;
@@ -92,6 +93,10 @@ public class DemoApplication {
 
 		((AnnotationConfigApplicationContext)EventListenerContext).close();
 
+
+		//容器的扩张点
+		System.out.println("容器的扩张点");
+		ApplicationContext processorContext = new AnnotationConfigApplicationContext(ProcessorConfig.class);
 
 	}
 
