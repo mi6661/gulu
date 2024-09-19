@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import Bean.Aware.*;
+import Bean.Close.Hellos;
 import Bean.Event.EventPublisher.CustomEvent;
 import Bean.First.First;
 import Bean.Lifecycle.test_Component;
@@ -9,6 +10,7 @@ import Bean.Second.Second;
 import Bean.Third.Components.TestOne;
 import Bean.Third.OneConfiguration;
 import Bean.Lifecycle.Config;
+import Bean.Close.Configs;
 import Bean.Lifecycle.UseXml.Person;
 import Bean.Event.*;
 import Bean.Event.EventPublisher.*;
@@ -98,6 +100,16 @@ public class DemoApplication {
 		System.out.println("容器的扩张点");
 		ApplicationContext processorContext = new AnnotationConfigApplicationContext(ProcessorConfig.class);
 
+
+		//关闭容器
+		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(Configs.class);
+
+		Hellos hellos = (Hellos)applicationContext.getBean("hellos", Hellos.class);
+
+		applicationContext.start();
+		System.out.println(hellos.hello());
+		applicationContext.close();
+		System.out.println(hellos.hello());
 	}
 
 }

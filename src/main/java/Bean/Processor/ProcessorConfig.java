@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan("Bean.Processor")
 public class ProcessorConfig {
+
     @Bean
     public Hello hello(){
         return new Hello();
